@@ -540,3 +540,44 @@ th { background: var(--grad-mata); }
 .cartoes li:nth-child(3) h3::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6'/%3E%3C/svg%3E"), var(--grad-mata); }
 .whats-flutuante { isolation: isolate; }
 .cartoes li:nth-child(n) h3::before { background-repeat: no-repeat; background-position: center; background-size: 24px, cover; }
+
+/* ---------- foto larga na seção "Representatividade" ---------- */
+.dois-col img.foto-larga { aspect-ratio: auto; object-fit: contain; align-self: center; }
+
+/* ---------- Nossos objetivos: título centralizado + cartões ---------- */
+.quem { grid-template-columns: 1fr; gap: 48px; }
+.quem-intro { text-align: center; max-width: 720px; margin-inline: auto; }
+.quem-intro h2 { background: linear-gradient(120deg, var(--mata-2), #3d7a2c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.quem-intro p { margin: 16px auto 0; max-width: 46ch; font-size: 1.2rem; color: var(--tinta-suave); }
+.objetivos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; border-top: 0; }
+.objetivos li {
+  flex: 1 1 300px; max-width: 372px; display: block; padding: 28px; border-bottom: 0; border-radius: var(--raio-g);
+  border: 1px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(140deg, rgb(127 191 63 / .55), rgb(213 223 203 / .6) 40%, rgb(242 162 27 / .45)) border-box;
+  box-shadow: var(--sombra-suave);
+}
+.objetivos li:hover { transform: translateY(-6px); box-shadow: var(--sombra-alta); }
+.objetivos li.revelar.visivel { transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, opacity .8s; }
+.objetivos svg {
+  width: 48px; height: 48px; padding: 11px; margin: 0 0 18px; border-radius: 14px; color: #fff;
+  background: var(--grad-folha); box-shadow: 0 8px 18px -6px rgb(79 140 43 / .7);
+}
+.objetivos li:nth-child(even) svg { background: var(--grad-sol); color: #1a2e12; box-shadow: 0 8px 18px -6px rgb(242 162 27 / .7); }
+.objetivos strong { font-size: 1.15rem; margin-bottom: 8px; line-height: 1.25; }
+
+/* ---------- Cursos ministrados: título centralizado + cartões de vidro ---------- */
+.cursos-texto { grid-template-columns: 1fr; gap: 36px; margin-top: 72px; }
+.cursos-texto > div { text-align: center; max-width: 720px; margin-inline: auto; }
+.cursos-texto > div > p { margin-inline: auto; max-width: 52ch; }
+.cursos-lista { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; border-top: 0; }
+.cursos-lista li, .cursos-lista li:hover {
+  flex: 1 1 320px; max-width: 372px; padding: 24px; border: 1px solid rgb(255 255 255 / .14); border-radius: var(--raio-g);
+  background: linear-gradient(160deg, rgb(255 255 255 / .09), rgb(255 255 255 / .03));
+  backdrop-filter: blur(8px);
+}
+.cursos-lista li { transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, background .3s, opacity .8s; }
+.cursos-lista li:hover { transform: translateY(-6px); border-color: rgb(255 215 122 / .5); background: linear-gradient(160deg, rgb(255 255 255 / .14), rgb(255 255 255 / .05)); }
+.cursos-lista strong::before {
+  content: ""; display: block; width: 36px; height: 4px; border-radius: 4px; margin-bottom: 14px; background: var(--grad-sol);
+}

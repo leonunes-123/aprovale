@@ -209,14 +209,14 @@ if (topo) {
 }
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const alvos = document.querySelectorAll(
-    '.secao-cabeca, .dois-col > *, .lei, .cartao, .docs li, .diretoria li, .cursos-texto > *, .contato > *, .associe > *, .tabela-titulo, .tabela-rolagem, .vitrine, .faixa-whats .wrap > *, .objetivos li, .texto-corrido'
+    '.secao-cabeca, .dois-col > *, .lei, .cartao, .docs li, .diretoria li, .cursos-texto > *, .contato > *, .associe > *, .tabela-titulo, .tabela-rolagem, .vitrine, .faixa-whats .wrap > *, .objetivos li, .cursos-lista li, .texto-corrido'
   );
   const obs = new IntersectionObserver((entradas) => {
     entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   alvos.forEach((el) => {
     if (el.closest('.revelar')) return;
-    const irmaos = [...el.parentElement.children].filter((x) => x.matches('.lei, .cartao, .docs li, .diretoria li, .objetivos li'));
+    const irmaos = [...el.parentElement.children].filter((x) => x.matches('.lei, .cartao, .docs li, .diretoria li, .objetivos li, .cursos-lista li'));
     const i = irmaos.indexOf(el);
     if (i > 0) el.style.setProperty('--atraso', `${Math.min(i, 5) * 0.08}s`);
     el.classList.add('revelar');
