@@ -12,3 +12,8 @@ img/logo.jpg
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Pastas de trabalho (originais dos PDFs) e config local
+Edital convocação/
+documentos/
+.claude/
